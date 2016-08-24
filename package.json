@@ -1,0 +1,24 @@
+{
+  "name": "ecopif",
+  "version": "0.0.1",
+  "description": "Based on\r http://ramachandrang.com/2016/04/23/express-angular2-application-using-typescript-server-setup.html",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.6",
+    "run-sequence": "^1.2.2"
+  }
+}

@@ -1,0 +1,11 @@
+/// Based on
+/// http://ramachandrang.com/2016/04/23/express-angular2-application-using-typescript-server-setup.html
+/// and
+/// http://ramachandrang.com/2016/05/18/express-angular2-application-using-typescript-Angular2-application.html
+/// and
+/// http://ramachandrang.com/2016/05/19/express-angular2-application-using-typescript-code-sharing-workflow.html
+
+/// before install run:
+npm install -g git+https://github.com/angular/angular-cli.git
+npm install -g typescript tsd gulp
+/// in root folder run:
