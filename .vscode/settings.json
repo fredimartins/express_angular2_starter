@@ -3,7 +3,7 @@
 	// HTTP
 
     // The proxy setting to use. If not set will be taken from the http_proxy and https_proxy environment variables
-    "http.proxy": "http://proxy.pifpafalimentos.com.br:80",
+    //"http.proxy": "http://proxy.pifpafalimentos.com.br:80",
 
     // Whether the proxy server certificate should be verified against the list of supplied CAs.
     "http.proxyStrictSSL": false,

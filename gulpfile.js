@@ -6,6 +6,7 @@ var shell = require('gulp-shell')
 var runSequence = require('run-sequence');
 var liveReload = require('gulp-livereload');
 var nodemon = require('gulp-nodemon');
+var notify = require('gulp-notify');
 
 gulp.task('build:server', function () {
     var tsProject = ts.createProject(path.resolve('server/tsconfig.json'));
@@ -54,8 +55,8 @@ gulp.task('watch-common', function () {
 });
 
 gulp.task('build', function (callback) {   
-    //runSequence('copy:common','build:server','watch-common','watch-server','build:client:watch','copy:client','server:run', callback);
-    runSequence('server:run', callback);
+    runSequence('copy:common','build:server','watch-common','watch-server','build:client:watch','copy:client','server:run', callback);
+    //runSequence('server:run', callback);
 });
 
 ////// end of build

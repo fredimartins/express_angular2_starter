@@ -9,4 +9,4 @@
 npm install -g git+https://github.com/angular/angular-cli.git
 npm install -g typescript tsd gulp
 /// in root folder run:
-npm install && cd client && npm install
+npm install && cd client && npm install && cd .. && cd server && tsd install
