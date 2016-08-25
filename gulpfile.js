@@ -80,3 +80,4 @@ gulp.task('server:run', function () {
 ////// end of server
 
 gulp.task('default', ['build']);
+gulp.task('serve', ['server:run']);
