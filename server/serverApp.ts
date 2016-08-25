@@ -14,7 +14,7 @@ export class ServerApp {
     }
 
     public setRoutes() {
-        console.log('log ' + path.resolve(__dirname,'./client'));
+        //console.log('log ' + path.resolve(__dirname,'./client'));
         this._App.use('/', _Site);             
     }
 

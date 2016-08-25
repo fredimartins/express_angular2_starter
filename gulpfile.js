@@ -29,7 +29,7 @@ gulp.task('watch-server', ['build:server'], function () {
 gulp.task('build:client:watch', function () {
     return gulp.src('')
     .pipe(
-        //shell(['ng build -w --output-path ../server/client'],{cwd:'client'})
+        //shell(['ng build -w --output-path ../server/client'],{cwd:'client'}) // no needed anymore, this taks will be maked by gulp
         shell(['ng build'],{cwd:'client'})
     )
 });
@@ -56,25 +56,24 @@ gulp.task('watch-common', function () {
 
 gulp.task('build', function (callback) {   
     runSequence('copy:common','build:server','watch-common','watch-server','build:client:watch','copy:client','server:run', callback);
-    //runSequence('server:run', callback);
 });
 
 ////// end of build
 
 gulp.task('server:run', function () {
-    process.chdir('server');
+    
     liveReload.listen();
     // configure nodemon
 	nodemon({
 		// the script to run the app
-		script: 'app.js',
+		script: 'server/app.js',
 		ext: 'js'
 	}).on('restart', function(){
 		// when the app has restarted, run livereload.
-		gulp.src('app.js')
+		gulp.src('server/app.js')
 			.pipe(liveReload())
 			.pipe(notify('Reloading page, please wait...'));
-	})
+	});
 });
 
 ////// end of server
