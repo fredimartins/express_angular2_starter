@@ -1,7 +1,9 @@
 import * as express from 'express'
 import * as path from 'path';
+import * as mongoose from 'mongoose';
 
-import * as _Site from "./routes/views/site";
+import * as _Index from "./routes/views/index";
+import * as _ApiProducts from "./routes/api/products";
 
 export class ServerApp {
 
@@ -13,15 +15,19 @@ export class ServerApp {
         this._Router = express.Router();
     }
 
+    public startMongoCon(){
+        mongoose.connect('mongodb://10.10.0.181/ecopif'); 
+    }
+
     public setRoutes() {
-        //console.log('log ' + path.resolve(__dirname,'./client'));
-        this._App.use('/', _Site);             
+        this._App.use('/', _Index);   
+        this._App.use('/api', _ApiProducts);          
     }
 
     public startServer() {
         //you won't need 'connect-livereload' if you have livereload plugin for your browser 
         this._App.listen(5000, function () {
-            console.log('Example app listening on port 5000!');
+            console.log('App listening on port 5000!');
         });
     }
 }

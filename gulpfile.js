@@ -6,7 +6,6 @@ var shell = require('gulp-shell')
 var runSequence = require('run-sequence');
 var liveReload = require('gulp-livereload');
 var nodemon = require('gulp-nodemon');
-var notify = require('gulp-notify');
 
 gulp.task('build:server', function () {
     var tsProject = ts.createProject(path.resolve('server/tsconfig.json'));
@@ -26,7 +25,7 @@ gulp.task('watch-server', ['build:server'], function () {
     gulp.watch('server/**/*.ts', ['build:server']);
 });
 
-gulp.task('build:client:watch', function () {
+gulp.task('build:client', function () {
     return gulp.src('')
     .pipe(
         //shell(['ng build -w --output-path ../server/client'],{cwd:'client'}) // no needed anymore, this taks will be maked by gulp
@@ -35,11 +34,11 @@ gulp.task('build:client:watch', function () {
 });
 
 gulp.task('copy:client', function (){
-    gulp.src(['client/dist/*']).pipe(gulp.dest('server/client'));
+    gulp.src(['client/dist/**/*']).pipe(gulp.dest('server/client/'));
 });
 
 gulp.task('watch-client', function () {
-    gulp.watch('client/dist/*', ['copy:client']);
+    gulp.watch('client/dist/**/*', ['copy:client']);
 });
 
 gulp.task('copy:common', function () {
@@ -55,7 +54,7 @@ gulp.task('watch-common', function () {
 });
 
 gulp.task('build', function (callback) {   
-    runSequence('copy:common','build:server','watch-common','watch-server','build:client:watch','copy:client','server:run', callback);
+    runSequence('copy:common', 'build:client', 'build:server', 'copy:client', 'watch-common','watch-server', 'watch-client', 'server:run', callback);
 });
 
 ////// end of build
@@ -71,8 +70,7 @@ gulp.task('server:run', function () {
 	}).on('restart', function(){
 		// when the app has restarted, run livereload.
 		gulp.src('server/app.js')
-			.pipe(liveReload())
-			.pipe(notify('Reloading page, please wait...'));
+			.pipe(liveReload());
 	});
 });
 
