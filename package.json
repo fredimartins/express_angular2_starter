@@ -19,7 +19,6 @@
     "gulp-notify": "^2.2.0",
     "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.13.6",
-    "run-sequence": "^1.2.2"
+    "gulp-typescript": "^2.13.6"
   }
 }

@@ -1,6 +1,5 @@
 <app-top></app-top>
 <!-- Start content of main/index -->
-
 <!-- Start slider -->
   <section id="aa-slider">
     <div class="aa-slider-area">
@@ -57,13 +56,13 @@
                     <div class="tab-pane fade in active" id="men">
                       <ul class="aa-product-catg">
                         <!-- start single product item -->
-                        <li>
+                        <li *ngFor="let prod of products | slice:0:8">
                           <figure>
-                            <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt=" produto.nome "></a>
+                            <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="{{ prod.Name }}"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
-                              <h4 class="aa-product-title"><a href="#"> produto.nome </a></h4>
-                              <span class="aa-product-price">R$ produto.preco </span><span class="aa-product-price"><del>R$ produto.preco </del></span>
+                              <h4 class="aa-product-title"><a href="#"> {{ prod.Name }} </a></h4>
+                              <span class="aa-product-price">R$ {{ prod.Price }} </span><span class="aa-product-price"><del>R$ {{ prod.Price }} </del></span>
                             </figcaption>
                           </figure>                        
                           <div class="aa-product-hvr-content">
@@ -81,13 +80,13 @@
                     <div class="tab-pane fade" id="festa">
                       <ul class="aa-product-catg">
                         <!-- start single product item -->
-                        <li>
+                        <li *ngFor="let prod of products">
                           <figure>
                             <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                             <figcaption>
-                              <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
+                              <h4 class="aa-product-title"><a href="#">{{ prod.Name }}</a></h4>
+                              <span class="aa-product-price">${{ prod.Price }}</span><span class="aa-product-price"><del>${{ prod.Price }}</del></span>
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
@@ -321,6 +320,4 @@
     </div>
   </section>
   <!-- / Testimonial -->
-
-<!-- End content of main/index -->
 <app-bot></app-bot>

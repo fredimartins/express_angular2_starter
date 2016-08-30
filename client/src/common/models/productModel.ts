@@ -1,12 +1,8 @@
 import * as mongoose from 'mongoose';
+import { IProduct } from './IProduct';
 
-export interface IProduct extends mongoose.Document {
-  ProductId: string;
-  Name: string;
-  Category:string;
-  Description:string;
-  Price:number;
-};
+export interface IProduct2 extends IProduct, mongoose.Document {
+}; 
 
 export const ProductSchema = new mongoose.Schema({
   ProductId: String,
@@ -17,4 +13,4 @@ export const ProductSchema = new mongoose.Schema({
 });
 
 
-export var repo = mongoose.model<IProduct>('Products', ProductSchema);
+export var repo = mongoose.model<IProduct2>('Products', ProductSchema);

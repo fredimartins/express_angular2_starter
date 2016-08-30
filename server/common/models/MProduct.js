@@ -9,4 +9,4 @@ exports.ProductSchema = new mongoose.Schema({
     Price: Number,
 });
 exports.repo = mongoose.model('Products', exports.ProductSchema);
-//# sourceMappingURL=productModel.js.map
+//# sourceMappingURL=MProduct.js.map
