@@ -6,7 +6,8 @@
 /// http://ramachandrang.com/2016/05/19/express-angular2-application-using-typescript-code-sharing-workflow.html
 
 /// before install run:
+-> Install node gyp https://github.com/nodejs/node-gyp
 npm install -g git+https://github.com/angular/angular-cli.git
-npm install -g typescript tsd gulp
+npm install -g typescript typings gulp
 /// in root folder run:
-npm install && cd client && npm install && cd .. && cd server && tsd install
+npm install && cd client && ng build && cd .. && cd server && typings install
