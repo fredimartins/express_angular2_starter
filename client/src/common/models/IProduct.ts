@@ -12,4 +12,4 @@ export class Product implements IProduct {
   Category:string;
   Description:string;
   Price:number;
-}
+};

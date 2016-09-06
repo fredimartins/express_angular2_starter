@@ -1,4 +1,6 @@
 node_modules/
-server/typings/
+**/node_modules/
+typings/
+**/typings/
 server/client/
 *.map

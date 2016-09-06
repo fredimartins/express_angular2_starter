@@ -1,7 +1,8 @@
 import * as express from 'express'
-var router = express.Router();
+import * as path from 'path';
+import * as prodModel from '../../common/models/MProduct';
 
-import * as prodModel from '../../common/models/productModel';
+var router = express.Router();
 
 /* GET index listing. */
 router.get('/products', function(req, res, next) {
@@ -23,5 +24,7 @@ router.get('/products/:_podID', function(req, res, next) {
         res.json(produtos);
     }));
 });
+
+
 
 export = router;
